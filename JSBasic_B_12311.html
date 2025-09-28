@@ -8,9 +8,9 @@
 </head>
 <body>
   <ul class="menu">
-      <li><a href="HtmlCssBasic_A_12111.html" >Kembali ke Halaman Utama</a></li>
-      <li><a href="HtmlForm_A_12111.html" >Halaman Form</a></li>
-      <!-- TODO: Pada bagian menu tambahkan Dialog box confirm ketika mengklik link tersebut. Clue : Gunakan OnClick dan return. -->
+      <li><a href="HtmlCssBasic_B_12311.html" >Kembali ke Halaman Utama</a></li>
+      <li><a href="HtmlForm_B_12311.html" >Halaman Form</a></li>
+      <li><a href="logout.html" onclick="return confirm('Apakah anda yakin ingin keluar?')">Keluar</a></li>
   </ul>
 
   <h2>Belajar JavaScript Fundamental</h2>
@@ -18,15 +18,15 @@
   <div class="card">
     <h3>Manipulasi Teks</h3>
     <p id="teks">Teks ini bisa berubah!</p>
-    <button onclick="ubahBiru()">Ubah ke Biru</button>
-    <button onclick="ubahMerah()">Ubah ke Merah</button>
-    <button onclick="ubahHijau()">Ubah ke Hijau</button>
+    <button onclick="keBiru()">Ubah ke Biru</button>
+    <button onclick="keMerah()">Ubah ke Merah</button>
+    <button onclick="keHijau()">Ubah ke Hijau</button>
   </div>
 
   <div class="card">
     <h3>Input Nama</h3>
     <input type="text" id="inputNama" placeholder="Ketik namamu...">
-    <button onclick="tampilkanNama()">Tampilkan</button>
+    <button onclick="tampilNama()">Tampilkan</button>
     <p id="output"></p>
   </div>
 
@@ -38,27 +38,47 @@
   </div>
 
   <script>
-     // TODO: Buat fungsi ubahBiru() untuk mengubah teks di elemen dengan id="teks" menjadi "Teks sudah berubah menjadi biru!" 
-     // dan warnanya menjadi biru.
+    function keBiru() {
+      let kalimat = document.getElementById("teks");
+      kalimat.innerHTML = "Teks sudah berubah menjadi biru!";
+      kalimat.style.color = "blue";
+    }
     
-    // TODO: Buat fungsi ubahMerah() untuk mengubah teks di elemen dengan id="teks" menjadi "Sekarang teks berwarna merah!" 
-    // dan warnanya menjadi merah.
+    function keMerah() {
+      let kalimat = document.getElementById("teks");
+      kalimat.innerHTML = "Sekarang teks berwarna merah!";
+      kalimat.style.color = "red";
+    }
     
-    // TODO: Buat fungsi ubahHijau() untuk mengubah teks di elemen dengan id="teks" menjadi "Sekarang teks berwarna hijau!" 
-    // dan warnanya menjadi hijau.
+    function keHijau() {
+      let kalimat = document.getElementById("teks");
+      kalimat.innerHTML = "Sekarang teks berwarna hijau!";
+      kalimat.style.color = "green";
+    }
 
     // Clue ketiga function diatas : gunakan document.getElementById, paragraf.innerHTML, dan paragraf.style.color
     
     
-    // TODO: Buat fungsi tampilkanNama() yang mengambil nilai dari input dengan id="inputNama". 
-    // Jika kosong, tampilkan alert "Silakan isi nama dulu." 
-    // Jika ada isinya, tampilkan alert "Halo, [nama]! Selamat Belajar HTML & JS :D".
+    function tampilNama() {
+      let nama = document.getElementById("inputNama").value;
+      if (nama.trim() === "") {
+        alert("Silakan isi nama dulu.");
+      } else {
+        alert("Halo, " + nama + "! Selamat Belajar HTML & JS :D");
+      }
+    }
     // Clue : gunakan document.getElementById("inputNama").value dan gunakan statement if else.
     
-    // TODO: Buat fungsi hitungKuadrat() yang mengambil nilai dari input dengan id="angka". 
-    // Jika kosong, tampilkan pesan "Masukkan angka terlebih dahulu." di elemen dengan id="hasil". 
-    // Jika ada isinya, hitung kuadrat angka tersebut dan tampilkan "Hasil kuadrat dari [angka] adalah [hasil]" 
-    // di elemen dengan id="hasil".
+    function hitungKuadrat() {
+      let angka = document.getElementById("angka").value;
+      let hasil = document.getElementById("hasil");
+      if (angka === "") {
+        hasil.innerHTML = "Masukkan angka terlebih dahulu.";
+      } else {
+        let kuadrat = angka * angka;
+        hasil.innerHTML = "Hasil kuadrat dari " + angka + " adalah " + kuadrat;
+      }
+    }
     // Clue : gunakan document.getElementById("angka").value dan gunakan hasil.innerHTML.
   </script>
 </body>
