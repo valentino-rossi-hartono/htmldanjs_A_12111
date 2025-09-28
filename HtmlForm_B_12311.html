@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Form - 12111</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="menu">
+      <li><a href="HtmlCssBasic_A_12111.html">Kembali ke Halaman Utama</a></li>
+      <li><a href="JSBasic_A_12111.html">Halaman Javascript</a></li>
+  </ul>
+
+  <h2>Form Pendaftaran Mahasiswa</h2>
+
+  <form onsubmit="return validateForm()">
+    <table cellspacing="4" cellpadding="4">
+      <tr>
+        <td><strong>Nama Mahasiswa</strong></td>
+        <td><input required type="text" id="namamhs" name="namamhs" size="30" /></td>
+      </tr>
+
+      <tr>
+        <td><strong>Jenis Kelamin</strong></td>
+        <td>
+          <input required type="radio" id="laki" name="jk" value="Laki-laki" /> Laki-laki
+          <input required type="radio" id="perempuan" name="jk" value="Perempuan" /> Perempuan
+        </td>
+      </tr>
+
+      <tr>
+        <td><strong>Program Studi</strong></td>
+        <td>
+          <select required id="prodi" name="prodi">
+            <option value="">Pilih Prodi</option>
+            <option value="Informatika">Informatika</option>
+            <option value="Teknik Industri">Teknik Industri</option>
+            <option value="Sistem Informasi">Sistem Informasi</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td><strong>Nomor Telepon</strong></td>
+        <td><input required type="number" id="telepon" name="telepon" /></td>
+      </tr>
+
+      <tr>
+        <td><strong>Tanggal Lahir</strong></td>
+        <td><input required type="date" id="tgllahir" name="tgllahir" /></td>
+      </tr>
+
+      <tr>
+        <td><strong>Email</strong></td>
+        <td><input required type="email" id="email" name="email" /></td>
+      </tr>
+
+      <tr>
+        <td><strong>Password</strong></td>
+        <td><input required type="password" id="password" name="password" /></td>
+      </tr>
+
+      <tr>
+      <td><strong>Hal Favorit</strong></td>
+      <td>
+        <fieldset>
+          <legend>Game</legend>
+          <input type="checkbox" name="game" value="Roblox"> Roblox<br>
+          <input type="checkbox" name="game" value="Magic Chess"> Magic Chess<br>
+          <input type="checkbox" name="game" value="Valorant"> Valorant<br>
+          <input type="checkbox" name="game" value="Clash Royale"> Clash Royale<br>
+          <input type="checkbox" name="game" value="Genshin Impact"> Genshin Impact
+        </fieldset>
+        <fieldset>
+          <legend>Film</legend>
+          <input type="checkbox" name="film" value="Drama"> Drama<br>
+          <input type="checkbox" name="film" value="Action"> Action<br>
+          <input type="checkbox" name="film" value="Romance"> Romance<br>
+          <input type="checkbox" name="film" value="Comedy"> Comedy<br>
+          <input type="checkbox" name="film" value="Thriller"> Thriller<br>
+          <input type="checkbox" name="film" value="Horror"> Horror
+        </fieldset>
+      </td>
+    </tr>
+           
+      <tr>
+        <td><strong>Deskripsi</strong></td>
+        <td><textarea required id="deskripsi" name="deskripsi" rows="5" cols="30"></textarea></td>
+      </tr>
+
+      <tr>
+        <td><strong>Foto</strong></td>
+        <td><input required type="file" id="foto" name="foto" accept="image/*" /></td>
+      </tr>
+
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" id="simpan" value="Simpan" />
+        </td>
+      </tr>
+
+    </table>
+  </form>
+
+  <script>
+    const validateForm = () =>alert("Data Berhasil Disimpan !");
+  </script>
+</body>
+</html>
