@@ -252,8 +252,9 @@ header {
   border-radius: 12px;
   padding: 20px;
   margin: 30px auto;
-  width: 100%;
-  max-width: 800px;
+  overflow-x: auto;
+  width: 1000%;
+  max-width: 1400px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -270,7 +271,7 @@ header {
 }
 
 .schedule-table th {
-  background: #3498db;
+  background: lightgreen;
   color: white;
   font-weight: 600;
 }

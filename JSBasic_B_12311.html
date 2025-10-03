@@ -26,14 +26,14 @@
   <div class="card">
     <h3>Input Nama</h3>
     <input type="text" id="inputNama" placeholder="Ketik namamu...">
-    <button onclick="tampilNama()">Tampilkan</button>
+    <button class = onclick="tampilNama()">Tampilkan</button>
     <p id="output"></p>
   </div>
 
   <div class="card">
     <h3>Hitung Kuadrat</h3>
     <input type="number" id="angka" placeholder="Masukkan angka...">
-    <button onclick="hitungKuadrat()">Hitung</button>
+    <button onclick="hitungKuadrat()" style="background-color: lightgreen;">Hitung</button>
     <p id="hasil"></p>
   </div>
 
@@ -74,9 +74,11 @@
       let hasil = document.getElementById("hasil");
       if (angka === "") {
         hasil.innerHTML = "Masukkan angka terlebih dahulu.";
-      } else {
+      } else if (angka % 2 == 0) {
         let kuadrat = angka * angka;
         hasil.innerHTML = "Hasil kuadrat dari " + angka + " adalah " + kuadrat;
+      }else{
+        hasil.innerHTML = "Angka Harus Genap";
       }
     }
     // Clue : gunakan document.getElementById("angka").value dan gunakan hasil.innerHTML.
